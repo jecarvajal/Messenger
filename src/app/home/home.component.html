@@ -1,0 +1,44 @@
+<div class="homeContainer">
+    <div class="whiteBorderGlassBox">
+        <div class="homeHeadContainer">
+            <div class="row">
+                <div class="col-md-auto">
+                    <div class="avatarFrameOnline">
+                        <img id="homeAvatarPicture" src="assets/img/generic_avatar.png" alt="">
+                    </div>
+                </div>
+                <div class="col">
+                    <b>Juan</b>
+                    <div>
+                        <span>Online</span>
+                        <br/>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="whiteContainerPadded marto15">
+        <div class="row">
+            <div class="col">
+                <input class="form-control" type="text" placeholder="Buscar Amigo" [(ngModel)]="query">
+            </div>
+            <div class="col-md-auto">
+                <img class="icon" src="assets/img/logo_live_add.png" alt="">
+            </div>
+        </div>
+
+        <hr/>
+        <b>Amigo {{friends.length}} / {{friends.length}}</b>
+        <div class="disblo marbo5" *ngFor="let user of friends | search:query ; let i = index">
+            <div>
+                <img id="status_logo" src="/assets/img/logo_live_{{user.status}}.png" />
+                <a routerLink="/conversation/{{user.uid}}">
+                    {{i}} - {{user.nick}} - {{user.email}}
+                </a>
+            </div>
+        </div>
+    
+    </div>
+
+</div>
